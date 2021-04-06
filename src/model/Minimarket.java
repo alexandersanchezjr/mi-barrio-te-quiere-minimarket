@@ -1,6 +1,10 @@
 package model;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+
+import exceptions.SameParityException;
+import exceptions.UnderAgeException;
 
 public class Minimarket {
 	private ArrayList<Person> peopleEntered;
@@ -38,6 +42,31 @@ public class Minimarket {
 		this.counter = counter;
 	}
 	
+	public void addPerson (int documentTypeNumber, String id) throws UnderAgeException, SameParityException {
+		
+		counter++;
+		
+		int secondLastNumber = Integer.parseInt(id.substring(id.length()-2, id.length()-2));
+		int secondLastNumber1 = Integer.parseInt(String.valueOf(id.charAt(id.length()-2)));
+		System.out.println("Primer penultimo numero: " + secondLastNumber + "\nSegundo penultimo numero: " + secondLastNumber1);
+		if (documentTypeNumber == 1)
+			throw new UnderAgeException ();
+		if ((secondLastNumber % 2 == 0 && LocalDate.now().getDayOfMonth() % 2 == 0) || (secondLastNumber % 2 != 0 && LocalDate.now().getDayOfMonth() % 2 != 0))
+			throw new SameParityException (LocalDate.now().getDayOfMonth(), secondLastNumber);
+		DocumentType documentType = null;
+		switch (documentTypeNumber) {
+		case 1:
+			documentType = DocumentType.TI;
+		case 2:
+			documentType = DocumentType.CC;
+		case 3:
+			documentType = DocumentType.PP;
+		case 4:
+			documentType = DocumentType.CE;
+		}
+		Person newPerson = new Person (documentType, id);
+		peopleEntered.add(newPerson);
+	}
 	
 	
 }
