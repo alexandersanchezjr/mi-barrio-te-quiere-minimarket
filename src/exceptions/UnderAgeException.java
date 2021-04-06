@@ -1,5 +1,6 @@
 package exceptions;
 
+@SuppressWarnings("serial")
 public class UnderAgeException extends Exception {
 
 	public UnderAgeException() {

@@ -1,5 +1,6 @@
 package exceptions;
 
+@SuppressWarnings("serial")
 public class SameParityException extends Exception {
 	
 	private int secondLastNumber; 
