@@ -57,7 +57,7 @@ public class Menu {
 		System.out.println("Tipo de identificación: " + 
 							"\n (1)TI - TARJETA DE IDENTIDAD \t(2)CC - CÉDULA DE CIUDADANÍA" + 
 							"\n(3)PP - PASAPORTE \t (4)CE - CÉDULA DE EXTRANJERÍA");
-		int documentType = sc.nextInt();
+		int documentType = sc.nextInt();sc.nextLine();
 		System.out.print("Ingrese su numero de identificación: ");
 		String id = sc.nextLine();
 		
