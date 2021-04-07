@@ -46,9 +46,8 @@ public class Minimarket {
 		
 		counter++;
 		
-		int secondLastNumber = Integer.parseInt(id.substring(id.length()-2, id.length()-2));
-		int secondLastNumber1 = Integer.parseInt(String.valueOf(id.charAt(id.length()-2)));
-		System.out.println("Primer penultimo numero: " + secondLastNumber + "\nSegundo penultimo numero: " + secondLastNumber1);
+		int secondLastNumber = Integer.parseInt(String.valueOf(id.charAt(id.length()-2)));
+
 		if (documentTypeNumber == 1)
 			throw new UnderAgeException ();
 		if ((secondLastNumber % 2 == 0 && LocalDate.now().getDayOfMonth() % 2 == 0) || (secondLastNumber % 2 != 0 && LocalDate.now().getDayOfMonth() % 2 != 0))
