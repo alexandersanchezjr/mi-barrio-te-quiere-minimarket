@@ -56,12 +56,16 @@ public class Minimarket {
 		switch (documentTypeNumber) {
 		case 1:
 			documentType = DocumentType.TI;
+			break;
 		case 2:
 			documentType = DocumentType.CC;
+			break;
 		case 3:
 			documentType = DocumentType.PP;
+			break;
 		case 4:
 			documentType = DocumentType.CE;
+			break;
 		}
 		Person newPerson = new Person (documentType, id);
 		peopleEntered.add(newPerson);
