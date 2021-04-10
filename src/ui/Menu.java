@@ -38,10 +38,13 @@ public class Menu {
 		switch (option) {
 		case ADD_PERSON:
 			addPerson();
+			break;
 		case SHOW_TOTAL_ENTER_ATTEMPTS:
 			showTotalPeople();
+			break;
 		case EXIT:
 			System.out.println("¡Adios!");
+			break;
 			default:
 				System.out.println("Digite una opcion válida");
 		}
